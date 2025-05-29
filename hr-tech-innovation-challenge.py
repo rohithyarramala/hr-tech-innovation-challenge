@@ -5,9 +5,13 @@ import pandas as pd
 import plotly.express as px
 import json
 import re
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
-# Configure Google AI
-genai.configure(api_key="AIzaSyCu0jQS7ccxfpz3ULHQBQw4G3N4KaT9YdI")
+# Configure Google AIfrom dotenv import load_dotenv
+
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 model = genai.GenerativeModel("gemini-2.0-flash-lite-001")
 
 def extract_text_from_pdf(uploaded_file):
@@ -263,24 +267,4 @@ with tab2:
                 st.plotly_chart(fig2, use_container_width=True)
 
 
-# Updated analyze_feedback function
-# def analyze_feedback(feedback_text, purpose):
-#     prompt = f"""
-# You are an AI analyzing employee feedback.
-
-# Purpose: {purpose}
-# Feedback text: "{feedback_text}"
-
-# Return JSON with:
-# - sentiment ("Positive", "Neutral", "Negative")
-# - attrition_risk ("High", "Medium", "Low")
-# - suggestion (brief explanation and recommended action)
-# """
-#     response = model.generate_content(prompt)
-#     try:
-#         import ast
-#         result = ast.literal_eval(response.text)
-#         return result
-#     except Exception:
-#         return {"raw_output": response.text}
 
