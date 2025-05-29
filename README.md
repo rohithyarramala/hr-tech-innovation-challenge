@@ -30,33 +30,28 @@ This project was built as part of an **Internship Selection Challenge** to demon
 ```bash
 git clone https://github.com/yourusername/hr-tech-innovation-challenge.git
 cd hr-tech-innovation-challenge
+```
 2. Create and Activate a Virtual Environment
-bash
-Copy
-Edit
+```
 python3 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 3. Install Dependencies
-bash
-Copy
-Edit
+```
 pip install -r requirements.txt
+```
 4. Set Up Environment Variables
 Create a .env file in the root directory and add your Google API Key:
 
-ini
-Copy
-Edit
+```
 GOOGLE_API_KEY=your_google_api_key_here
+```
 5. Run the App
-bash
-Copy
-Edit
+```
 streamlit run hr-tech-innovation-challenge.py
+```
 📁 Folder Structure (Optional)
-bash
-Copy
-Edit
+```
 .
 ├── resume_samples/         # Sample PDF resumes
 ├── feedback_samples/       # Sample employee feedback JSON
@@ -65,6 +60,7 @@ Edit
 ├── hr-tech-innovation-challenge.py
 ├── requirements.txt
 └── README.md
+```
 📝 License
 This project is released under the MIT License.
 
