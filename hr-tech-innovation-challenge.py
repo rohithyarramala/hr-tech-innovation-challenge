@@ -14,6 +14,8 @@ load_dotenv()
 # genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
+
+
 model = genai.GenerativeModel("gemini-2.0-flash-lite-001")
 
 def extract_text_from_pdf(uploaded_file):
